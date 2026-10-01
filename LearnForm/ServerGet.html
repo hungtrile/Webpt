@@ -1,0 +1,37 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Ví dụ GET</title>
+  <script>
+    function getUrlVars() {
+      var vars = {};
+      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+        function (m, key, value) {
+          vars[key] = value;
+        });
+      return vars;
+    }
+
+    var ten = unescape(getUrlVars()["txtten"]);
+    var email = unescape(getUrlVars()["txtemail"]);
+
+    window.onload = function() {
+      document.getElementById("iduser").innerHTML = ten;
+      document.getElementById("idemail").innerHTML = email;
+    }
+  </script>
+</head>
+<body>
+  <h2>Ví dụ: Cách sử dụng phương thức GET</h2>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+      <td>User:</td>
+      <td id="iduser"></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td id="idemail"></td>
+    </tr>
+  </table>
+</body>
+</html>
