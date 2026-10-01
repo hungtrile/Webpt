@@ -1,0 +1,322 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Jackson Electronics - Registration</title>
+    <style>
+        body {
+            background-color: #9AC9F5;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            width: 480px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 210px;
+            height: auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 22px;
+            margin: 10px 0 15px;
+        }
+
+        .description {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 3px 2px;
+            vertical-align: middle;
+        }
+
+        .label {
+            width: 130px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select {
+            height: 20px;
+            box-sizing: border-box;
+            border: 1px solid #999;
+        }
+
+        input[type="text"] {
+            width: 145px;
+        }
+
+        input[name="firstname"],
+        input[name="lastname"] {
+            width: 82px;
+        }
+
+        input[name="city"] {
+            width: 105px;
+        }
+
+        input[name="state"] {
+            width: 35px;
+        }
+
+        input[name="zip"] {
+            width: 55px;
+        }
+
+        input[name="country"] {
+            width: 105px;
+        }
+
+        input[name="serial"] {
+            width: 105px;
+        }
+
+        select {
+            width: 105px;
+        }
+
+        textarea {
+            width: 245px;
+            height: 70px;
+            resize: none;
+            border: 1px solid #999;
+        }
+
+        .line {
+            border-top: 1px solid #777;
+            margin: 7px 0;
+        }
+
+        .radio-group,
+        .check-group {
+            line-height: 20px;
+        }
+
+        .radio-group label,
+        .check-group label {
+            margin-right: 20px;
+        }
+
+        .buttons {
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        button {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 13px;
+            padding: 2px 8px;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function registerForm() {
+            alert("Đăng ký thành công!");
+        }
+
+        function cancelForm() {
+            document.getElementById("registerForm").reset();
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="logo">
+        <img src="Jackson.gif" alt="Jackson Electronics">
+    </div>
+    <h1>Registration Form</h1>
+    <div class="description">
+        Register your Jackson Electronics product here
+    </div>
+    <form id="registerForm">
+        <table>
+            <tr>
+                <td class="label">First Name:</td>
+                <td>
+                    <input type="text" name="firstname">
+                </td>
+
+                <td>Last Name:</td>
+                <td>
+                    <input type="text" name="lastname">
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Address #1:</td>
+                <td colspan="3">
+                    <input type="text" name="address1" style="width:245px;">
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Address #2:</td>
+                <td colspan="3">
+                    <input type="text" name="address2" style="width:245px;">
+                </td>
+            </tr>
+            <tr>
+                <td class="label">City:</td>
+
+                <td>
+                    <input type="text" name="city">
+                </td>
+
+                <td>State:</td>
+
+                <td>
+                    <input type="text" name="state">
+                </td>
+
+                <td>Zip:</td>
+
+                <td>
+                    <input type="text" name="zip">
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Country:</td>
+                <td colspan="3">
+                    <input type="text"
+                           name="country"
+                           value="United States">
+                </td>
+            </tr>
+
+        </table>
+
+        <div class="line"></div>
+
+        <table>
+            <tr>
+                <td class="label">Product:</td>
+                <td>
+                    <select name="product">
+                        <option>ScanMaster</option>
+                        <option>PowerLite</option>
+                        <option>AudioMax</option>
+                        <option>VideoMaster</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Date Purchased:</td>
+                <td>
+                    <input type="date" name="datePurchased">
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Serial #:</td>
+                <td>
+                    <input type="text" name="serial">
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Used for:</td>
+                <td colspan="3" class="radio-group">
+
+                    <label>
+                        <input type="radio" name="usedFor" value="Home">
+                        Home
+                    </label>
+
+                    <label>
+                        <input type="radio" name="usedFor" value="Educational">
+                        Educational Institution
+                    </label>
+
+                    <br>
+
+                    <label>
+                        <input type="radio" name="usedFor" value="Business">
+                        Business
+                    </label>
+
+                    <label>
+                        <input type="radio" name="usedFor" value="Other">
+                        Other
+                    </label>
+
+                    <br>
+
+                    <label>
+                        <input type="radio" name="usedFor" value="Government">
+                        Government
+                    </label>
+
+                </td>
+            </tr>
+            <tr>
+                <td class="label">System (check all that apply):</td>
+
+                <td colspan="3" class="check-group">
+
+                    <label>
+                        <input type="checkbox" name="system" value="Windows">
+                        Windows
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="system" value="UNIX">
+                        UNIX
+                    </label>
+
+                    <br>
+
+                    <label>
+                        <input type="checkbox" name="system" value="Macintosh">
+                        Macintosh
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="system" value="Other">
+                        Other
+                    </label>
+
+                </td>
+            </tr>
+
+        </table>
+
+        <div class="line"></div>
+
+        <table>
+            <tr>
+                <td class="label">Comments?:</td>
+
+                <td>
+                    <textarea name="comments"></textarea>
+                </td>
+            </tr>
+
+        </table>
+        <div class="buttons">
+
+            <button type="button" onclick="registerForm()">
+                Click to register
+            </button>
+
+            <button type="button" onclick="cancelForm()">
+                Click to cancel
+            </button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
