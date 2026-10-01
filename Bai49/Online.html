@@ -1,0 +1,457 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Online Classifieds Search Form</title>
+
+    <style>
+        body {
+            background-color: white;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 14px;
+        }
+
+        .form-container {
+            width: 500px;
+            margin: 20px auto;
+            padding: 20px 10px 25px 10px;
+
+            background-color: #CCFFFF;
+            border: 2px solid #0033CC;
+
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: red;
+            font-size: 21px;
+            margin: 0 0 18px 0;
+            padding-bottom: 17px;
+
+            border-bottom: 1px solid #777;
+        }
+
+        .question {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .question-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .radio-column {
+            display: inline-block;
+            width: 100px;
+            vertical-align: top;
+        }
+
+        .radio-column label {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .publication {
+            display: inline-block;
+            width: 145px;
+            margin-bottom: 4px;
+        }
+
+        input[type="text"] {
+            height: 19px;
+            box-sizing: border-box;
+        }
+
+        .date-input {
+            width: 125px;
+        }
+
+        .keyword {
+            width: 440px;
+            height: 20px;
+        }
+
+        .actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .action {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .action img {
+            display: block;
+            width: 32px;
+            height: 32px;
+            margin: 0 auto 3px auto;
+        }
+
+        .search-text {
+            color: green;
+            font-weight: bold;
+        }
+
+        .help-text {
+            color: blue;
+            font-weight: bold;
+        }
+
+        .cancel-text {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+
+        // SEARCH
+        function searchClassified() {
+
+            var section = document.querySelector(
+                'input[name="section"]:checked'
+            );
+
+            var publications = document.querySelectorAll(
+                'input[name="publication"]:checked'
+            );
+
+            var fromDate = document.getElementById("fromDate").value;
+            var toDate = document.getElementById("toDate").value;
+            var keyword = document.getElementById("keyword").value;
+
+            if (section == null) {
+                alert("Vui lòng chọn một mục tìm kiếm!");
+                return;
+            }
+
+            if (publications.length == 0) {
+                alert("Vui lòng chọn ít nhất một publication!");
+                return;
+            }
+
+            alert(
+                "Đang tìm kiếm classified...\n\n" +
+                "Section: " + section.value + "\n" +
+                "From: " + fromDate + "\n" +
+                "To: " + toDate + "\n" +
+                "Keywords: " + keyword
+            );
+        }
+
+
+        // HELP
+        function showHelp() {
+
+            var section = document.querySelector(
+                'input[name="section"]:checked'
+            );
+
+            if (section == null) {
+                alert(
+                    "Help\n\n" +
+                    "Vui lòng chọn một mục để xem hướng dẫn."
+                );
+                return;
+            }
+
+            var message = "";
+
+            switch (section.value) {
+
+                case "Employment":
+                    message =
+                        "Help - Employment\n\n" +
+                        "Tìm các thông tin tuyển dụng.";
+                    break;
+
+                case "Personal":
+                    message =
+                        "Help - Personal\n\n" +
+                        "Tìm các tin đăng cá nhân.";
+                    break;
+
+                case "For Sale":
+                    message =
+                        "Help - For Sale\n\n" +
+                        "Tìm các sản phẩm được rao bán.";
+                    break;
+
+                case "Miscellaneous":
+                    message =
+                        "Help - Miscellaneous\n\n" +
+                        "Tìm các tin đăng khác.";
+                    break;
+
+                case "Housing":
+                    message =
+                        "Help - Housing\n\n" +
+                        "Tìm các thông tin nhà ở.";
+                    break;
+
+                case "All":
+                    message =
+                        "Help - All\n\n" +
+                        "Tìm kiếm tất cả các loại classified.";
+                    break;
+            }
+
+            alert(message);
+        }
+
+
+        // CANCEL
+        function cancelForm() {
+            document.getElementById("classifiedForm").reset();
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h1>
+        Online Classifieds Search Form
+    </h1>
+
+    <form id="classifiedForm">
+
+        <!-- Câu 1 -->
+        <div class="question">
+
+            <div class="question-title">
+                1) Search for a classified in the following sections:
+            </div>
+
+            <div class="radio-column">
+
+                <label>
+                    <input
+                        type="radio"
+                        name="section"
+                        value="Employment">
+                    Employment
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="section"
+                        value="For Sale"
+                        checked>
+                    For Sale
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="section"
+                        value="Housing">
+                    Housing
+                </label>
+
+            </div>
+
+            <div class="radio-column">
+
+                <label>
+                    <input
+                        type="radio"
+                        name="section"
+                        value="Personal">
+                    Personal
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="section"
+                        value="Miscellaneous">
+                    Miscellaneous
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="section"
+                        value="All">
+                    All of the above
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- Câu 2 -->
+        <div class="question">
+
+            <div class="question-title">
+                2) Search the following publications:
+            </div>
+
+            <label class="publication">
+                <input
+                    type="checkbox"
+                    name="publication"
+                    value="Midwest times"
+                    checked>
+                Midwest times
+            </label>
+
+            <label class="publication">
+                <input
+                    type="checkbox"
+                    name="publication"
+                    value="Modern News">
+                Modern News
+            </label>
+
+            <label class="publication">
+                <input
+                    type="checkbox"
+                    name="publication"
+                    value="Employment Today">
+                Employment Today
+            </label>
+
+            <br>
+
+            <label class="publication">
+                <input
+                    type="checkbox"
+                    name="publication"
+                    value="Great Lakes Classifieds"
+                    checked>
+                Great Lakes Classifieds
+            </label>
+
+            <label class="publication">
+                <input
+                    type="checkbox"
+                    name="publication"
+                    value="Middleton Daily">
+                Middleton Daily
+            </label>
+
+            <label class="publication">
+                <input
+                    type="checkbox"
+                    name="publication"
+                    value="Cashtown Daily News">
+                Cashtown Daily News
+            </label>
+
+        </div>
+
+
+        <!-- Câu 3 -->
+        <div class="question">
+
+            <div class="question-title">
+                3) From to
+                <input
+                    type="text"
+                    id="fromDate"
+                    class="date-input"
+                    placeholder="mm/dd/yy">
+
+                to
+
+                <input
+                    type="text"
+                    id="toDate"
+                    class="date-input"
+                    placeholder="mm/dd/yy">
+            </div>
+
+        </div>
+
+
+        <!-- Câu 4 -->
+        <div class="question">
+
+            <div class="question-title">
+                4) Enter a few keywords to describe the classified.
+            </div>
+
+            <input
+                type="text"
+                id="keyword"
+                class="keyword">
+
+        </div>
+
+
+        <!-- Câu 5 -->
+        <div class="question">
+
+            <div class="question-title">
+                5) Click one of the options below:
+            </div>
+
+            <div class="actions">
+
+                <!-- Search -->
+                <div
+                    class="action"
+                    onclick="searchClassified()">
+
+                    <img
+                        src="Search.gif"
+                        alt="Search">
+
+                    <div class="search-text">
+                        Search
+                    </div>
+
+                </div>
+
+
+                <!-- Help -->
+                <div
+                    class="action"
+                    onclick="showHelp()">
+
+                    <img
+                        src="Help.gif"
+                        alt="Help">
+
+                    <div class="help-text">
+                        Help
+                    </div>
+
+                </div>
+
+
+                <!-- Cancel -->
+                <div
+                    class="action"
+                    onclick="cancelForm()">
+
+                    <img
+                        src="Cancel.gif"
+                        alt="Cancel">
+
+                    <div class="cancel-text">
+                        Cancel
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
