@@ -1,0 +1,72 @@
+
+body {
+    font-family: "Times New Roman";
+    font-size: 14px;
+}
+.right {
+    text-align: right;
+}
+
+.container {
+    width: 500px;
+    margin: auto;
+    padding: 5px;
+    border: 1px solid steelblue;
+}
+
+h1 {
+    font-size: 28px;
+    margin-top: 0;
+}
+
+.color-option {
+    width: fit-content;
+    margin: 2px 0;
+}
+
+.blue {
+    background-color: blue;
+    color: white;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: limegreen;
+}
+
+.purple {
+    background-color: violet;
+}
+
+table {
+    width: 100%;
+    margin-top: 12px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    text-align: left;
+    padding: 2px;
+}
+
+th {
+    background-color: blue;
+    color: white;
+}
+
+/* Di chuyển chuột vào dòng thì nền vàng */
+tbody tr:hover {
+    background-color: yellow;
+}
+
+button {
+    margin-top: 10px;
+}

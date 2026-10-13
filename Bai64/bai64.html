@@ -1,0 +1,54 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 64 - Dynamic Table</title>
+    <link rel="stylesheet" href="bai64.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="dongHo"></div>
+
+        <p>Click chuột vào dòng này. Sẽ xuất hiện thông báo bằng hộp bấm của chuột</p>
+
+        <table id="myTable">
+            <tbody>
+                <tr>
+                    <td>Thêm dòng mới ở đây</td>
+                    <td>Thêm dòng mới ở đây</td>
+                </tr>
+                <tr>
+                    <td>Thêm dòng mới ở đây</td>
+                    <td>Thêm dòng mới ở đây</td>
+                </tr>
+                <tr>
+                    <td>Thêm dòng mới ở đây</td>
+                    <td>Thêm dòng mới ở đây</td>
+                </tr>
+                <tr>
+                    <td>Dòng 1 cột 1</td>
+                    <td>Dòng 1 cột 2</td>
+                </tr>
+                <tr>
+                    <td>Dòng 2 cột 1</td>
+                    <td>Dòng 2 cột 2</td>
+                </tr>
+                <tr>
+                    <td>Dòng 3 cột 1</td>
+                    <td>Dòng 3 cột 2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="buttons">
+            <button onclick="themDong()">Thêm vào</button>
+            <button onclick="xoaDong()">Xóa</button>
+            <button onclick="chiHienDong()">Chỉ hiện dòng</button>
+            <button onclick="chiHienCot()">Chỉ hiện cột</button>
+            <button onclick="moTrangMoi()">Mở một trang mới</button>
+        </div>
+    </div>
+
+    <script src="bai64.js"></script>
+</body>
+</html>

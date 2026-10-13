@@ -1,0 +1,89 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 63 - Đăng ký thành viên</title>
+    <link rel="stylesheet" href="bai63.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Đăng ký thành viên</h1>
+        <hr>
+
+        <form id="formDangKy">
+            Tên(*)
+            <input type="text" id="hoTen">
+            <br>
+
+            Ngày sinh(*)
+            Ngày: <select id="ngay"></select>
+            Tháng: <select id="thang"></select>
+            Năm: <select id="nam"></select>
+            <br>
+
+            Giới tính(*)
+            <input type="radio" name="gioiTinh" value="Nam">Nam
+            <input type="radio" name="gioiTinh" value="Nữ">Nữ
+            <br>
+
+            Email(*)
+            <input type="text" id="email">
+            <br><br>
+
+            Sở thích của bạn:<br>
+            <input type="checkbox" name="soThich" value="Mua sắm">Mua sắm<br>
+            <input type="checkbox" name="soThich" value="Du lịch">Du lịch<br>
+            <input type="checkbox" name="soThich" value="Tán gẫu">Tán gẫu<br>
+            <input type="checkbox" name="soThich" value="Đọc sách">Đọc sách<br>
+            <input type="checkbox" name="soThich" value="Nghe nhạc">Nghe nhạc<br>
+
+            Màu yêu thích của bạn:<br>
+
+            <div class="color-option blue">
+                <input type="radio" name="mau" value="Màu xanh da trời">
+                Màu xanh da trời
+            </div>
+
+            <div class="color-option red">
+                <input type="radio" name="mau" value="Màu đỏ">
+                Màu đỏ
+            </div>
+
+            <div class="color-option yellow">
+                <input type="radio" name="mau" value="Màu vàng">
+                Màu vàng
+            </div>
+
+            <div class="color-option green">
+                <input type="radio" name="mau" value="Màu xanh xanh lá cây">
+                Màu xanh xanh lá cây
+            </div>
+
+            <div class="color-option purple">
+                <input type="radio" name="mau" value="Màu xanh tím">
+                Màu xanh tím
+            </div>
+
+            <button type="button" onclick="dangKy()">Đăng ký</button>
+            <button type="button" onclick="tiep()">Tiếp</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tên</th>
+                    <th>Email</th>
+                    <th>Giới tính</th>
+                    <th>Năm sinh</th>
+                    <th>Sở thích</th>
+                    <th>Màu yêu thích</th>
+                </tr>
+            </thead>
+
+            <tbody id="dsThanhVien"></tbody>
+        </table>
+    </div>
+
+    <script src="bai63.js"></script>
+</body>
+</html>

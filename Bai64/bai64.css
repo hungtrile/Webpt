@@ -1,0 +1,60 @@
+
+body {
+    font-family: "Times New Roman";
+    font-size: 18px;
+}
+
+/* Khung chính */
+.container {
+    width: 600px;
+    margin: 20px;
+    padding: 12px;
+    border: 1px solid #999;
+    box-shadow: 2px 2px 5px #ccc;
+}
+
+/* Đồng hồ */
+#dongHo {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Dòng hướng dẫn */
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Bảng */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+td {
+    border: 1px solid #aaa;
+    padding: 6px;
+    cursor: pointer;
+}
+
+tr.dongDo {
+    background-color: red;
+    color: white;
+}
+
+/* Các nút */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+button {
+    font-family: "Times New Roman";
+    font-size: 15px;
+    padding: 5px 8px;
+    cursor: pointer;
+}
